@@ -1,40 +1,44 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
 import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
+import { getCollection, render } from 'astro:content'
 
 export async function getStaticPaths() {
-  const data = await fetch('https://jsonplaceholder.typicode.com/posts').then((response) => response.json())
+  const blogEntries = await getCollection('blog')
 
-  return data.map((post) => {
+  return blogEntries.map((entry) => {
     return {
-      params: { post: post.title.replaceAll(' ', '-').toLowerCase() },
-      props: { post },
+      params: { post: entry.id },
+      props: { entry },
     }
   })
 }
 
-const { post } = Astro.props
+const { entry } = Astro.props
+const { Content } = await render(entry)
 ---
 
-<DefaultLayout title={post.title} description={post.body} url={post.title}>
+<DefaultLayout title={entry.data.title} description={entry.data.description} url={entry.id}>
   <div class="container">
     <div class="mt-12">
       <Breadcrumbs>
-        <BreadcrumbsItem href="/" label="Home" />
+        <BreadcrumbsItem href="/" label="Accueil" />
         <BreadcrumbsItem href="/blog" label="Blog" />
-        <BreadcrumbsItem currentPage={true} label={post.title} />
+        <BreadcrumbsItem currentPage={true} label={entry.data.title} />
       </Breadcrumbs>
     </div>
   </div>
   <section class="my-12">
     <div class="container">
-      <h1>{post.title}</h1><br />
-      <p>By userId: {post.userId}</p>
+      <h1>{entry.data.title}</h1><br />
+      <p>Par {entry.data.author} • {new Date(entry.data.date).toLocaleDateString('fr-FR', {day: 'numeric', month: 'long', year: 'numeric'})}</p>
     </div>
   </section>
   <section class="my-12">
     <div class="container">
-      <p class="text-2xl">{post.body}</p>
+      <article class="prose prose-lg max-w-none">
+        <Content />
+      </article>
     </div>
   </section>
 </DefaultLayout>

@@ -55,6 +55,19 @@ Clone this theme locally and run any of the following commands in your terminal:
 | `npm run build`   | Build your production site to `./dist/`      |
 | `npm run preview` | Preview your build locally, before deploying |
 
+## Deployment on GitHub Pages
+
+This project is configured to be automatically deployed to GitHub Pages using GitHub Actions. When you push changes to the `main` branch, the site will be built and deployed to GitHub Pages.
+
+To enable GitHub Pages for this repository:
+
+1. Go to the repository settings on GitHub
+2. Navigate to the "Pages" section
+3. Under "Build and deployment", select "GitHub Actions" as the source
+4. The site will be available at: https://arnaudban.github.io/pregochouette/
+
+The deployment workflow is defined in `.github/workflows/deploy.yml`.
+
 ## Accessible Astro projects
 
 - [Accessible Astro Starter](https://github.com/incluud/accessible-astro-starter): Fully accessible starter for kickstarting Astro projects, with Tailwind.

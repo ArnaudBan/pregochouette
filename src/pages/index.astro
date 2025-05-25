@@ -9,109 +9,77 @@ import { Accordion, AccordionItem } from 'accessible-astro-components'
 
 <DefaultLayout title="Home">
   <Hero />
-  <section class="my-64">
+  <section class="my-64" id="activities">
     <div class="container">
-      <h2 class="mb-16 text-6xl">Features</h2>
+      <h2 class="mb-16 text-6xl">Nos Activités</h2>
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
-        <Feature icon="mdi:tailwind" title="Tailwind CSS">
-          Use the power of Tailwind to greatly improve your productivity and enhance your developer workflow.
+        <Feature icon="mdi:calendar" title="Événements Saisonniers">
+          Fêtes de quartier, marchés de Noël, et célébrations saisonnières pour rassembler les habitants du Pré Gauchet.
         </Feature>
-        <Feature icon="mdi:wheelchair-accessibility" title="a11y Components">
-          17 components and counting, all tried and tested for the most optimal accessible experience for your visitors.
+        <Feature icon="mdi:food-apple" title="Ateliers Culinaires">
+          Découvrez les saveurs du monde avec nos ateliers de cuisine participatifs ouverts à tous les âges.
         </Feature>
-        <Feature icon="mdi:looks" title="Prettier">
-          Less worry about formatting your code, let the Astro Prettier integration do the heavy lifting.
+        <Feature icon="mdi:palette" title="Activités Créatives">
+          Ateliers d'art, de bricolage et d'expression créative pour petits et grands.
         </Feature>
-        <Feature icon="mdi:eslint" title="ESLint">
-          Lint your code with strict a11y settings to ensure you stay on track with the WCAG standards.
+        <Feature icon="mdi:sprout" title="Jardinage Urbain">
+          Participez à l'embellissement du quartier avec nos projets de jardinage collectif et d'agriculture urbaine.
         </Feature>
-        <Feature icon="mdi:book-open-page-variant" title="Blog">
-          This theme comes with a fully integrated blog, dynamic pages and SEO optimization.
+        <Feature icon="mdi:human-greeting" title="Entraide Solidaire">
+          Réseau d'entraide entre voisins, échanges de services et soutien aux personnes isolées.
         </Feature>
-        <Feature icon="mdi:language-markdown" title="Markdown & MDX">
-          Easily use .md and .mdx pages to build your websites or use it with Netlify CMS.
-        </Feature>
-        <Feature icon="mdi:theme-light-dark" title="Dark mode">
-          Fully integrated Dark mode gives your users the choice for their favorite viewing mode.
-        </Feature>
-        <Feature icon="mdi:cog" title="Design System">
-          The theme offers some very handy utilities to help you build your website faster.
-        </Feature>
-        <Feature icon="mdi:lighthouse" title="Lighthouse Scores">
-          Excellent lighthouse scores means your website will load faster and get better SEO rankings.
+        <Feature icon="mdi:school" title="Soutien Scolaire">
+          Aide aux devoirs et accompagnement éducatif pour les jeunes du quartier.
         </Feature>
       </div>
     </div>
   </section>
   <ContentMedia imgSrc="/accessible-components.webp">
-    <h2>Accessible Components</h2>
+    <h2>Notre Histoire</h2>
     <p class="text-2xl">
-      This theme provides plenty of tried and tested Accessible Astro Components. Some are native to this theme and a
-      lot of others are integrated using a <a href="https://github.com/markteekman/accessible-astro-components"
-        >separate package</a
-      >. They'll get you up and running in building an accessible solution for your visitors.
+      Fondée en 2015, l'association Prégauchouette est née de la volonté des habitants du quartier Pré Gauchet de créer un espace de convivialité et d'échange. Notre mission est de favoriser le lien social, l'entraide et l'animation locale pour améliorer la qualité de vie dans notre quartier en pleine transformation.
     </p>
   </ContentMedia>
   <ContentMedia imgSrc="/wcag-compliant.webp" reverseImg={true}>
-    <h2>WCAG 2.2 AA Compliant</h2>
+    <h2>Notre Quartier</h2>
     <p class="text-2xl">
-      Using semantic HTML, landmarks, skip links, screen reader friendly content, aria-labels, keyboard accessible
-      navigation and components, clear outlines and tab indicators and the right color contrast, you're more certain of
-      reaching WCAG AA compliance.
+      Le Pré Gauchet est un quartier en pleine évolution situé près de la gare de Nantes. Mêlant nouveaux immeubles et anciennes habitations, c'est un espace dynamique où se côtoient familles, étudiants, et professionnels. Notre association contribue à créer une identité commune et un sentiment d'appartenance dans ce territoire en mutation.
     </p>
   </ContentMedia>
-  <section class="my-64">
+  <section class="my-64" id="contact">
     <div class="container grid grid-cols-1 gap-12 md:grid-cols-2">
       <div class="flex flex-col items-start gap-4">
-        <h2 class="text-6xl">FAQ</h2>
+        <h2 class="text-6xl">Questions Fréquentes</h2>
         <p class="text-2xl">
-          This section demonstrates how to effectively use the Accordion component to organize and display frequently
-          asked questions in an accessible and user-friendly way.
+          Vous avez des questions sur notre association ou nos activités ? Consultez notre FAQ ci-dessous ou contactez-nous directement.
         </p>
-        <a class="button" href="/faq">Contact support team</a>
+        <a class="button" href="mailto:contact@pregauchouette.fr">Contactez-nous</a>
       </div>
       <div class="space-content">
         <Accordion>
-          <AccordionItem name="exclusive" title="What is WCAG and why is it important?" open>
+          <AccordionItem name="exclusive" title="Comment devenir membre de l'association ?" open>
             <p>
-              WCAG (Web Content Accessibility Guidelines) is a set of internationally recognized standards for web
-              accessibility. Following WCAG ensures your website is usable by people with various disabilities,
-              including visual, auditory, physical, and cognitive impairments. It's important not just for
-              accessibility, but also for legal compliance, SEO, and reaching a wider audience.
+              Pour devenir membre de Prégauchouette, il suffit de remplir le formulaire d'adhésion disponible lors de nos événements ou en nous contactant par email. La cotisation annuelle est de 10€ par personne ou 15€ par famille. L'adhésion vous permet de participer à toutes nos activités et de voter lors de notre assemblée générale annuelle.
             </p>
           </AccordionItem>
-          <AccordionItem name="exclusive" title="What's the difference between ARIA labels and alt text?">
+          <AccordionItem name="exclusive" title="Quand ont lieu vos activités ?">
             <p>
-              Alt text is specifically for describing images to screen reader users, while ARIA labels (aria-label,
-              aria-labelledby) can describe any element on a page. Alt text is HTML's native way to provide alternative
-              text for images, while ARIA labels are part of the ARIA specification that helps make dynamic content and
-              advanced UI controls more accessible.
+              Nos activités se déroulent principalement en soirée en semaine et le week-end. Le calendrier complet est disponible sur notre blog et est mis à jour régulièrement. Nous envoyons également une newsletter mensuelle à nos membres pour les informer des prochains événements.
             </p>
           </AccordionItem>
-          <AccordionItem name="exclusive" title="Why is keyboard navigation important?">
+          <AccordionItem name="exclusive" title="Puis-je proposer une nouvelle activité ?">
             <p>
-              Keyboard navigation is essential for users who can't use a mouse, including people with motor
-              disabilities, visual impairments, or those who simply prefer keyboard controls. A website should be fully
-              operable using only a keyboard, with visible focus indicators and logical tab order. This includes being
-              able to access all interactive elements and navigate through content efficiently.
+              Absolument ! Nous encourageons les initiatives des habitants du quartier. Si vous avez une idée d'activité ou d'événement, contactez-nous pour en discuter. Nous pourrons vous aider à la mettre en place si elle correspond aux valeurs de l'association et si nous disposons des ressources nécessaires.
             </p>
           </AccordionItem>
-          <AccordionItem name="exclusive" title="What is a sufficient color contrast ratio?">
+          <AccordionItem name="exclusive" title="L'association recherche-t-elle des bénévoles ?">
             <p>
-              According to WCAG 2.2 AA standards, text should have a minimum contrast ratio of 4.5:1 against its
-              background for regular text, and 3:1 for large text (18pt or 14pt bold). For non-text elements like icons
-              or buttons, a minimum ratio of 3:1 is required. This ensures content is readable for users with visual
-              impairments or color blindness.
+              Oui, nous sommes toujours à la recherche de bénévoles pour nous aider à organiser et animer nos activités. Que vous ayez quelques heures par mois ou plus de temps à consacrer, toute aide est précieuse. Vous pouvez vous engager sur des projets spécifiques ou participer régulièrement selon vos disponibilités.
             </p>
           </AccordionItem>
-          <AccordionItem name="exclusive" title="How do I make custom components accessible?">
+          <AccordionItem name="exclusive" title="Comment suivre l'actualité de l'association ?">
             <p>
-              To make custom components accessible, focus on these key aspects: use semantic HTML where possible,
-              implement proper keyboard support, add appropriate ARIA attributes, manage focus when needed, and ensure
-              adequate color contrast. Always test with screen readers and keyboard navigation. Consider using
-              established design patterns from the <a href="https://www.w3.org/WAI/ARIA/apg/patterns/"
-                >ARIA Authoring Practices Guide</a
-              >.
+              Vous pouvez suivre notre actualité via notre blog sur ce site, notre page Facebook "Association Prégauchouette", notre compte Instagram @pregauchouette, ou en vous inscrivant à notre newsletter mensuelle. N'hésitez pas également à passer nous voir lors de nos permanences le premier samedi de chaque mois à la Maison de quartier.
             </p>
           </AccordionItem>
         </Accordion>
@@ -120,12 +88,12 @@ import { Accordion, AccordionItem } from 'accessible-astro-components'
   </section>
   <section class="mb-32 mt-64">
     <div class="container">
-      <h2 class="mb-16 text-6xl">Counters</h2>
+      <h2 class="mb-16 text-6xl">Notre Impact</h2>
       <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
-        <Counter count="520" title="Stars" sub="On GitHub" />
-        <Counter count="17" title="Accessible" sub="Components" />
-        <Counter count="500" title="Commits" sub="Merged" />
-        <Counter count="18+" title="Months" sub="Since launch" />
+        <Counter count="8" title="Années" sub="D'existence" />
+        <Counter count="120+" title="Membres" sub="Actifs" />
+        <Counter count="25+" title="Activités" sub="Par an" />
+        <Counter count="4" title="Événements" sub="Majeurs annuels" />
       </div>
     </div>
   </section>
